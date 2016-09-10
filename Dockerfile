@@ -1,4 +1,8 @@
-FROM node:argon
+FROM alpine:3.3
+
+ENV NODE_VERSION 6.2.0
+
+RUN apk add --no-cache --virtual .run-deps nodejs@$NODE_VERSION
 
 # Create app directory
 WORKDIR /usr/src/app
@@ -11,4 +15,5 @@ RUN npm install
 COPY . /usr/src/app
 
 EXPOSE 8080
+
 CMD [ "npm", "start" ]
