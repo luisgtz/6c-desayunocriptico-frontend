@@ -46,7 +46,7 @@ angular.module('gservice', [])
             else {
 
                 // Perform an AJAX call to get all of the records in the db.
-                $http.get('/users').success(function(response){
+                $http.get(location.protocol + '//172.16.11.145:8082/servicio').success(function(response){
 
                     // Then convert the results into map points
                     locations = convertToMapPoints(response);
@@ -71,18 +71,18 @@ angular.module('gservice', [])
                 var user = response[i];
 
                 // Create popup windows for each record
-                var  contentString = user.name + '<br><b>Busca ayuda en </b>: ' + user.skillrequired + '<br>' +
-                    '<b>situacion</b>: ' + user.description + '</p>';
+                var  contentString = user.name + '<br><b>Busca ayuda en </b>: ' + user.skillRequired + '<br>' +
+                    '<b>Situacion</b>: ' + user.description + '</p>';
 
                 // Converts each of the JSON records into Google Maps Location format (Note Lat, Lng format).
                 locations.push(new Location(
-                    new google.maps.LatLng(user.location[1], user.location[0]),
+                    new google.maps.LatLng(user.lat, user.lon),
                     new google.maps.InfoWindow({
                         content: contentString,
                         maxWidth: 320
                     }),
                     user.name,
-                    user.skillrequired,
+                    user.skillRequired,
                     user.description
                 ))
             }

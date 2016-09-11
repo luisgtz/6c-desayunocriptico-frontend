@@ -33,21 +33,13 @@ queryCtrl.controller('queryCtrl', function($scope, $log, $http, $rootScope, geol
     $scope.queryUsers = function(){
 
         // Assemble Query Body
-        queryBody = {
-            longitude: parseFloat($scope.formData.longitude),
-            latitude: parseFloat($scope.formData.latitude),
-            distance: parseFloat($scope.formData.distance),
-            male: $scope.formData.male,
-            female: $scope.formData.female,
-            other: $scope.formData.other,
-            minAge: $scope.formData.minage,
-            maxAge: $scope.formData.maxage,
-            favlang: $scope.formData.favlang,
-            reqVerified: $scope.formData.verified
-        };
+        queryBody = {};
+        if ($scope.formData.skillrequired) {
+            queryBody.skillRequired = $scope.formData.skillrequired;
+        }
 
-        // Post the queryBody to the /query POST route to retrieve the filtered results
-        $http.post('/query', queryBody)
+        // Apply filter and get the results
+        $http.get(location.protocol + '//172.16.11.145:8082/servicio', queryBody)
 
             // Store the filtered results in queryResults
             .success(function(queryResults){
