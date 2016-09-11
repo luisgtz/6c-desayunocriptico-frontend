@@ -63,14 +63,14 @@ addCtrl.controller('addCtrl', function($scope, $http, $rootScope, geolocation, g
         var userData = {
             name: $scope.formData.name,
             description: $scope.formData.description,
-            skillrequired: $scope.formData.skillrequired,
+            skillRequired: $scope.formData.skillrequired,
             phone: $scope.formData.phone,
-            location: [$scope.formData.longitude, $scope.formData.latitude],
-            htmlverified: $scope.formData.htmlverified
+            lat: $scope.formData.latitude,
+            lon: $scope.formData.longitude
         };
 
         // Saves the user data to the db
-        $http.post('/users', userData)
+        $http.post(location.protocol + '//172.16.11.145:8082/servicio', userData)
             .success(function (data) {
 
                 // Once complete, clear the form (except location)
