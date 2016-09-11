@@ -17,76 +17,40 @@
 
                 <!-- Text Boxes and Other User Inputs. Note ng-model binds the values to Angular $scope -->
                 <div class="form-group">
-                    <label for="username">Tu nombre: <span class="badge">campos requeridos</span></label>
-                    <input type="text" class="form-control" id="username" ng-model="formData.username" required>
-                </div>
-                <!--
-                <label class="radio control-label">Gender</label>
-                <div class="radio">
-                    <label>
-                        <input type="radio" name="optionsRadios" id="radiomale" value="Male" ng-model="formData.gender">
-                        Male
-                    </label>
-                </div>
-                <div class="radio" required>
-                    <label>
-                        <input type="radio" name="optionsRadios" id="radiofemale" value="Female" ng-model="formData.gender">
-                        Female
-                    </label>
-                </div>
-                <div class="radio">
-                    <label>
-                        <input type="radio" name="optionsRadios" id="radioother" value="What's it to ya?" ng-model="formData.gender">
-                        What's it to ya?
-                    </label>
+                    <label for="name">Tu nombre: <span class="badge">campos requeridos</span></label>
+                    <input type="text" class="form-control" id="name" ng-model="formData.name" required>
                 </div>
 
                 <div class="form-group">
-                    <label for="age">Age</label>
-                    <input type="number" class="form-control" id="age" placeholder="72" ng-model="formData.age" required>
-                </div>
-              -->
-                <div class="form-group">
-                    <label for="language">Servicio requerido</label>
-                    <input type="text" class="form-control" id="language" placeholder="Fontarería, Albañilería, Jardinería" ng-model="formData.favlang" required>
+                    <label for="skillrequired">Servicio requerido</label>
+                    <input type="text" class="form-control" id="skillrequired" placeholder="Fontarería, Albañilería, Jardinería" ng-model="formData.skillrequired" required>
                 </div>
                 <div class="form-group">
-                    <label for="language">Descripcion de la chamba</label>
-                    <input type="text" class="form-control" id="language" placeholder="Se rompio la llave del grifo" ng-model="formData.favlang" required>
+                    <label for="description">Descripcion de la chamba</label>
+                    <input type="text" class="form-control" id="description" placeholder="Se rompio la llave del grifo" ng-model="formData.description" required>
                 </div>
-                <label>Contactar me por:</label>
+
                 <div class="form-group">
-                    <label class="checkbox-inline">
-                        <input type="checkbox" name="optionsRadios" id="checkphone" value="telefono" ng-model="formData.male" ng-true-value = "'Telefono'">
-                        Telefono
-                    </label>
-                    <label class="checkbox-inline">
-                        <input type="checkbox" name="optionsRadios" id="checkwhatsapp" value="whatsapp" ng-model="formData.female" ng-true-value="'WhatsApp'">
-                        WhatsApp
-                    </label>
-                    <label class="checkbox-inline">
-                        <input type="checkbox" name="optionsRadios" id="checkchambapp" value="chambapp" ng-model="formData.other" ng-true-value="'ChambApp'">
-                        ChambApp
-                    </label>
+                    <label for="phone">telefono</label>
+                    <input type="text" class="form-control" id="phone" placeholder="+52 33 36 45 18" ng-model="formData.phone" required>
                 </div>
-                <!--
-                <div class="form-group">
+
+                <div class="form-group" hidden>
                     <label for="latitude">Latitud</label>
-                    <input type="text" class="form-control" id="latitude" value="39.500" ng-model="formData.latitude" readonly>
+                    <input type="text" class="form-control" id="latitude" value="20.734699" ng-model="formData.latitude" readonly>
                 </div>
-                <div class="form-group">
+                <div class="form-group" hidden>
                     <label for="longitude">Longitud</label>
-                    <input type="text" class="form-control" id="longitude" value="-98.350" ng-model="formData.longitude" readonly>
+                    <input type="text" class="form-control" id="longitude" value="-103.455321" ng-model="formData.longitude" readonly>
                 </div>
                 <div class="form-group">
                     <!-- Note RefreshLoc button tied to addCtrl. This requests a refresh of the HTML5 verified location. -->
-                <!--
-                    <label for="verified">HTML5 Verified Location? <span><button ng-click="refreshLoc()" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-refresh"></span></button></span></label>
+                    <label for="verified">Verificar mi ubicacion <span><button ng-click="refreshLoc()" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-refresh"></span></button></span></label>
                     <input type="text" class="form-control" id="verified" placeholder= "Nope (Thanks for spamming my map...)" ng-model="formData.htmlverified" readonly>
                 </div>
-              -->
+
                 <!-- Submit button. Note that its tied to createUser() function from addCtrl. Also note ng-disabled logic which prevents early submits.  -->
-                <button type="submit" class="btn btn-danger btn-block" ng-click="createUser()" ng-disabled="addForm.$invalid">Buscar</button>
+                <button type="submit" class="btn btn-danger btn-block" ng-click="createUser()" ng-disabled="addForm.$invalid">Buscar Ayudante</button>
             </form>
         </div>
     </div>

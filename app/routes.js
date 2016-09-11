@@ -29,6 +29,7 @@ module.exports = function(app) {
     app.post('/users', function(req, res){
 
         // Creates a new User based on the Mongoose schema and the post bo.dy
+        console.log(req.body);
         var newuser = new User(req.body);
 
         // New User is saved in the db.
