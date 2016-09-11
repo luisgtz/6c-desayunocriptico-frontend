@@ -63,7 +63,7 @@ addCtrl.controller('addCtrl', function($scope, $http, $rootScope, geolocation, g
         var userData = {
             name: $scope.formData.name,
             description: $scope.formData.description,
-            skillRequired: $scope.formData.skillRequired,
+            skillrequired: $scope.formData.skillrequired,
             phone: $scope.formData.phone,
             location: [$scope.formData.longitude, $scope.formData.latitude],
             htmlverified: $scope.formData.htmlverified

@@ -29,12 +29,12 @@
               -->
                 <!-- Note ng-true-value which translates check values into explicit gender strings -->
                 <div class="form-group">
-                    <label for="favlang">Servicio que proveo:</label>
-                    <input type="text" class="form-control" id="favlang" placeholder="Fontarería, Albañilería, Jardinería" ng-model="formData.favlang">
+                    <label for="skillrequired">Servicio que proveo:</label>
+                    <input type="text" class="form-control" id="skillrequired" placeholder="Fontarería, Albañilería, Jardinería" ng-model="formData.skillrequired">
                 </div>
                 <div class="form-group">
-                    <label for="favlang">Telefono:</label>
-                    <input type="text" class="form-control" id="favlang" placeholder="+52 1 33 373845" ng-model="formData.favlang">
+                    <label for="phone">Telefono:</label>
+                    <input type="text" class="form-control" id="phone" placeholder="+52 1 33 373845" ng-model="formData.phone">
                 </div>
                 <label>Genero</label>
                 <div class="form-group">
@@ -54,15 +54,15 @@
                 <label>Contactar me por:</label>
                 <div class="form-group">
                     <label class="checkbox-inline">
-                        <input type="checkbox" name="optionsRadios" id="checkphone" value="telefono" ng-model="formData.male" ng-true-value = "'Telefono'">
+                        <input type="checkbox" name="optionsRadios" id="checkphone" value="telefono" ng-model="formData.contactphone" ng-true-value = "'Telefono'">
                         Telefono
                     </label>
                     <label class="checkbox-inline">
-                        <input type="checkbox" name="optionsRadios" id="checkwhatsapp" value="whatsapp" ng-model="formData.female" ng-true-value="'WhatsApp'">
+                        <input type="checkbox" name="optionsRadios" id="checkwhatsapp" value="whatsapp" ng-model="formData.contactwhatsapp" ng-true-value="'WhatsApp'">
                         WhatsApp
                     </label>
                     <label class="checkbox-inline">
-                        <input type="checkbox" name="optionsRadios" id="checkchambapp" value="chambapp" ng-model="formData.other" ng-true-value="'ChambApp'">
+                        <input type="checkbox" name="optionsRadios" id="checkchambapp" value="chambapp" ng-model="formData.contactchamapp" ng-true-value="'ChambApp'">
                         ChambApp
                     </label>
                 </div>

@@ -71,7 +71,7 @@ angular.module('gservice', [])
                 var user = response[i];
 
                 // Create popup windows for each record
-                var  contentString = user.name + '<br><b>Busca ayuda en </b>: ' + user.skillRequired + '<br>' +
+                var  contentString = user.name + '<br><b>Busca ayuda en </b>: ' + user.skillrequired + '<br>' +
                     '<b>situacion</b>: ' + user.description + '</p>';
 
                 // Converts each of the JSON records into Google Maps Location format (Note Lat, Lng format).
@@ -82,7 +82,7 @@ angular.module('gservice', [])
                         maxWidth: 320
                     }),
                     user.name,
-                    user.skillRequired,
+                    user.skillrequired,
                     user.description
                 ))
             }
@@ -91,11 +91,11 @@ angular.module('gservice', [])
         };
 
         // Constructor for generic location
-        var Location = function(latlon, message, name, skillRequired, description){
+        var Location = function(latlon, message, name, skillrequired, description){
             this.latlon = latlon;
             this.message = message;
             this.name = name;
-            this.skillRequired = skillRequired;
+            this.skillrequired = skillrequired;
             this.description = description;
         };
 
